@@ -32,7 +32,7 @@ async function set(id, value) {
 async function get(id) {
   // await prepare();
   const results = await db.query(sql("SELECT * FROM users WHERE username='" + id + "';"));
-//   console.log("results: ", results)
+//   // console.log("results: ", results)
   if (results.length) {
     return results;
   } else {
@@ -42,9 +42,9 @@ async function get(id) {
 
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
-  console.log("/users...")
+  // console.log("/users...")
 var results = await get('user1\' or \'1\'=\'1')
-console.log(results)
+// console.log(results)
 // db.close();
   res.send('respond with a resource: '+ JSON.stringify(results));
 });

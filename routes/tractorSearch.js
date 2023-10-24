@@ -9,7 +9,7 @@ const {sql} = require('@databases/sqlite');
 const db = connect();
 
 async function prepare() {
-  console.log("preparing table")
+  // console.log("preparing table")
   await db.query(sql`
     CREATE TABLE tractors (
       vin VARCHAR NOT NULL PRIMARY KEY,
@@ -22,7 +22,7 @@ async function prepare() {
     );
   `);
   
-  console.log("setting values")
+  // console.log("setting values")
   await set("TRACP0K99DR122370", 
   "JD 2020 - Like New", 
   "$6,999.99", 
@@ -50,7 +50,7 @@ async function prepare() {
   "toy-tractor.jpg", 
   "Got to get them started early.", 
   "FLAG-INJECTIONCONFIRMED-FLAG")
-  console.log("values set.")
+  // console.log("values set.")
 }
 
 
@@ -73,8 +73,8 @@ async function get(id) {
 }
 /* GET tractorSearch page. */
 router.get('/', async function(req, res, next) {
-console.log("/tractorBYVIn...")
-console.log("req query params: ", req.query)
+// console.log("/tractorBYVIn...")
+// console.log("req query params: ", req.query)
 const vin = req.query.vin;
 var results;
 try{
@@ -83,7 +83,7 @@ try{
   results = [{}]
   results[0].title = error 
 }
-console.log("results = ", results)
+// console.log("results = ", results)
   res.render('tractorSearch', { title: 'Trackslist', tractorData: (results), search:vin });
 });
 

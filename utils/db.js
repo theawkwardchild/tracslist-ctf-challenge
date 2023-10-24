@@ -5,7 +5,7 @@ const {sql} = require('@databases/sqlite');
 const db = connect();
 
 async function prepare() {
-  console.log("preparing table")
+  // console.log("preparing table")
   await db.query(sql`
     CREATE TABLE tractors (
       vin VARCHAR NOT NULL PRIMARY KEY,
@@ -21,7 +21,7 @@ async function prepare() {
   // 1FTDF15YXPKA24180
   // 1FTJX35G0SEA85001
   // 2FAPP39S0LB220229
-  console.log("setting values")
+  // console.log("setting values")
   await set("TRACP0K99DR122370", 
   "JD 2020 - Like New", 
   "$40,000", 
@@ -32,7 +32,7 @@ async function prepare() {
   // await set("1FTJX35G0SEA85001", "JD 2020 - Like New", "$40,000", "Description: Like new John Deer. Used for 2 years but looks brand new.", "Makes a ticking sound that should be looked at. Sold as is.")
   // await set("2FAPP39S0LB220229", "JD 2020 - Like New", "$40,000", "Description: Like new John Deer. Used for 2 years but looks brand new.", "Makes a ticking sound that should be looked at. Sold as is.")
   
-  console.log("values set.")
+  // console.log("values set.")
 }
 
 
@@ -49,7 +49,7 @@ async function set(vin, title, price, image, description, notes) {
 async function get(id) {
   // await prepare();
   const results = await db.query(sql("SELECT * FROM tractors WHERE vin='" + id + "';"));
-//   console.log("results: ", results)
+//   // console.log("results: ", results)
   if (results.length) {
     return results;
   } else {
