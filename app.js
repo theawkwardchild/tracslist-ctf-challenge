@@ -8,7 +8,6 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var searchRouter = require('./routes/tractorSearch');
 var detailsRouter = require('./routes/tractorDetails');
-var latestRouter = require('./routes/latest');
 
 
 
@@ -34,7 +33,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/tractorSearch', searchRouter);
 app.use('/tractorDetails', detailsRouter);
-app.use('/latest', latestRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
