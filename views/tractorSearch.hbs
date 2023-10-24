@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title> 
+    
+    
+    {{#each css}}
+        <link rel="stylesheet" href="/css/{{this}}">
+    {{/each}}
+</head>
+<body>
+
+    <div class="header">
+        <a href="/">Home</a>
+        <a href="/tractorDetails">Tractor Details</a>
+        <a href="/tractorSearch">Tractor Search</a>
+
+    </div>
+<h2>Tractor Search</h2>
+<div>
+
+
+{{#if tractorData}}
+
+    {{#tractorData}}
+    <div class="listing">
+        <h4>Title: {{title}}</h4>
+        <h4>Description: {{{description}}}</h4>
+        <img src="{{image}}" width="500" />
+        <h4>VIN: {{vin}}</h4>
+    </div>
+    {{/tractorData}}
+{{else}}
+    <h4>no results for " <div style="font-size: 1.5em; color:#ff9696; display: initial;">{{{search}}}</div> "</h4>
+{{/if}}
+
+
+
+
+    {{!-- {{tractorData}} --}}
+</div>
+
+
+
+<form action="/tractorSearch" method="get" class="search">
+<input type="text" name="vin" id="vin">
+<button type="submit">Search</button>
+</form>
+
+    
+</body>
+</html>
