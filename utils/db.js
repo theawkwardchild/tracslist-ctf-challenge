@@ -24,7 +24,7 @@ async function prepare() {
   // console.log("setting values")
   await set("TRACP0K99DR122370", 
   "JD 2020 - Like New", 
-  "$40,000", 
+  "$6,999.99", 
   "https://i.pinimg.com/736x/9c/b8/a3/9cb8a379e9526161c5bbec24b7529867.jpg", 
   "Like new John Deer. Used for 2 years but looks brand new. <a target='_blank' href='https://www.youtube.com/watch?v=z2_TLz9TpwY'>DOOM supported</a>.", 
   "Makes a ticking sound that should be looked at. Sold as is.")
