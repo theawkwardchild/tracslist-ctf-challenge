@@ -82,7 +82,7 @@ try{
 } catch(error){
   results = [{}]
   results[0].title = "ERROR"
-  results[0].description =  "Invalid query: SELECT * FROM tractors WHERE vin='<strong style='text-decoration: underline; '>" + vin + "</strong>';"
+  results[0].title = error 
 }
 // console.log("results = ", results)
   res.render('tractorSearch', { title: 'Trackslist', tractorData: (results), search:vin });
